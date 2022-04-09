@@ -4,11 +4,8 @@
 #include <iostream>
 using namespace std;
 
-int main()
+void printMenu()
 {
-    
-    int userSelection;
-    
     // 1 print help
     cout << "1: Print help:" << endl;
 
@@ -25,14 +22,70 @@ int main()
     cout << "5: Print contents of wallet:" << endl;
 
     // 6 continue time line
-    cout << "6: continue in timeline:" << endl << endl;
+    cout << "6: continue in timeline:" << endl;
+
+    // 7 exit
+    cout << "7: exiting!" << endl << endl;
 
     cout << "=======================================" << endl;
+}
 
+int userInput()
+{
+    int userSelection;
     cout << "Make a selection from the options:" << endl;
     cin >> userSelection;
     cout << "You selected: " << userSelection << endl;
+    return userSelection;
+}
 
+void processUserInput(int userSelection)
+{
+    if (userSelection < 1) // not valid selection
+    {
+        cout << "This is not a valid selection. Please select a value from the menu." << endl;
+    }
+    else if (userSelection == 1)
+    {
+        cout << "This is a trading platform." << endl << endl;
+    }
+    else if (userSelection == 2)
+    {
+        cout << "Market is volatile." << endl << endl;
+    }
+    else if (userSelection == 3)
+    {
+        cout << "Make an offer." << endl << endl;
+    }
+    else if (userSelection == 4)
+    {
+        cout << "Make a bid." << endl << endl;
+    }
+    else if (userSelection == 5)
+    {
+        cout << "Your wallet is FULL!" << endl << endl;
+    }
+    else if (userSelection == 6)
+    {
+        cout << "Going to next time frame." << endl << endl;
+    }
+    else if (userSelection > 7) // not valid selection
+    {
+        cout << "This is not a valid selection. Please select a value from the menu." << endl << endl;
+    }
+}
+
+int main()
+{
+    while (true) {
+
+        printMenu();
+
+        int userSelection = userInput();
+
+        processUserInput(userSelection);
+
+    };
 
     return 0;
 }
