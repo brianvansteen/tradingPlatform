@@ -4,6 +4,8 @@
 #include <iostream>
 using namespace std;
 
+
+/* print the user menu */
 void printMenu()
 {
     // 1 print help
@@ -30,6 +32,36 @@ void printMenu()
     cout << "=======================================" << endl;
 }
 
+void printHelp() // menu 1
+{
+    cout << "This is a trading platform." << endl << endl;
+}
+
+void exchangeStats() // menu 2
+{
+    cout << "Market is volatile." << endl << endl;
+}
+
+void makeOffer() // menu 3
+{
+    cout << "Make an offer." << endl << endl;
+}
+
+void makeBid() // menu 4
+{
+    cout << "Make a bid." << endl << endl;
+}
+
+void printWallet() // menu 5
+{
+    cout << "Your wallet is FULL!" << endl << endl;
+}
+
+void continueTrade() // menu 6
+{
+    cout << "Going to next time frame." << endl << endl;
+}
+
 int userInput()
 {
     int userSelection;
@@ -47,27 +79,27 @@ void processUserInput(int userSelection)
     }
     else if (userSelection == 1)
     {
-        cout << "This is a trading platform." << endl << endl;
+        printHelp();
     }
     else if (userSelection == 2)
     {
-        cout << "Market is volatile." << endl << endl;
+        exchangeStats();
     }
     else if (userSelection == 3)
     {
-        cout << "Make an offer." << endl << endl;
+        makeOffer();
     }
     else if (userSelection == 4)
     {
-        cout << "Make a bid." << endl << endl;
+        makeBid();
     }
     else if (userSelection == 5)
     {
-        cout << "Your wallet is FULL!" << endl << endl;
+        printWallet();
     }
     else if (userSelection == 6)
     {
-        cout << "Going to next time frame." << endl << endl;
+        continueTrade();
     }
     else if (userSelection > 7) // not valid selection
     {
@@ -77,6 +109,7 @@ void processUserInput(int userSelection)
 
 int main()
 {
+
     while (true) {
 
         printMenu();
