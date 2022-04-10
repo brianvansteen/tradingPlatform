@@ -2,8 +2,10 @@
 //
 
 #include <iostream>
+#include "programV1B.cpp"
 using namespace std;
 
+void printHello();
 
 /* print the user menu */
 void printMenu()
@@ -109,6 +111,7 @@ void processUserInput(int userSelection)
 
 int main()
 {
+    printHello();
 
     while (true) {
 
