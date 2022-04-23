@@ -1,4 +1,6 @@
 #include <iostream>
+#include <string>
+#include <vector>
 
 void printHello()
 {
@@ -11,5 +13,41 @@ void printHello()
 	std::cout << "float: " << sizeof(float) << std::endl << std::endl;
 	long double ld = 0.0;
 	std::cout << "long double: " << sizeof(ld) << std::endl << std::endl;
+
+
+	//double price = 5319.450228;
+	//double amount = 0.00020075;
+	//std::string timeStamp{ "2020/03/17 17:01:24" };
+	//std:string product{ "BTC/USDT" };
+	//std::string orderType{ "bid" };
+
+	std::string s = "Astring";
+
+	enum class OrderBookType { bid, ask };
+	//OrderBookType orderType = OrderBookType::bid;
+
+	std::vector<double> prices;
+	std::vector<double> amounts;
+	std::vector<std::string> timestamps;
+	std::vector<std::string> products;
+	std::vector<OrderBookType> orderTypes;
+
+	prices.push_back(5319.450228);
+	amounts.push_back(0.00020075);
+	timestamps.push_back("2020/03/17 17:01:24");
+	products.push_back("BTC/USDT");
+	orderTypes.push_back(OrderBookType::bid);
+
+
+	prices.push_back(5303.450228);
+	amounts.push_back(0.00020075);
+	timestamps.push_back("2020/03/17 17:01:28");
+	products.push_back("BTC/USDT");
+	orderTypes.push_back(OrderBookType::ask);
+
+	std::cout << "Price 1: " << prices[0] << std::endl << std::endl;
+	std::cout << "Price 2: " << prices[1] << std::endl << std::endl;
+
+
 
 }
