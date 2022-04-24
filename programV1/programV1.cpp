@@ -4,10 +4,35 @@
 #include <iostream>
 #include "programV1B.cpp"
 #include <string>
-using namespace std;
 
 void printHello();
 
+enum class OrderBookType{bid, ask};
+
+class OrderBookEntry
+{
+    public:
+
+    // create constructor
+    OrderBookEntry(double price,
+                double amount,
+                std::string timestamp,
+                std::string product,
+                OrderBookType ordertype)
+    {
+        this->price = price;
+        this->amount = amount;
+        this->timestamp = timestamp;
+        this->product = product;
+        this->ordertype = ordertype;
+    }
+
+        double price;
+        double amount;
+        std::string timestamp;
+        std::string product;
+        OrderBookType ordertype;
+};
 
 /* print the user menu */
 void printMenu()
@@ -114,6 +139,20 @@ void processUserInput(int userSelection)
 int main()
 {
     printHello();
+
+    OrderBookEntry order1{10302,
+                    0.0051824,
+                    "2020/03/17 17:04:02.2234",
+                    "BTC/USDT",
+                    OrderBookType::bid};
+
+    //order1.price = 10000;
+    //order1.amount = 0.003183;
+    //order1.timestamp = "2020/03/17 17:04:02.2234";
+    //order1.product = "BTC/USDT";
+    //order1.ordertype = OrderBookType::bid;
+
+    std::cout << "The price is: " << order1.price << std::endl << std::endl;
 
     while (true) {
 

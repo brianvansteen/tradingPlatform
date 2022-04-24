@@ -23,27 +23,27 @@ void printHello()
 
 	std::string s = "Astring";
 
-	enum class OrderBookType { bid, ask };
+	enum class OrderTypes { bid, ask };
 	//OrderBookType orderType = OrderBookType::bid;
 
 	std::vector<double> prices;
 	std::vector<double> amounts;
 	std::vector<std::string> timestamps;
 	std::vector<std::string> products;
-	std::vector<OrderBookType> orderTypes;
+	std::vector<OrderTypes> orderTypes;
 
 	prices.push_back(5319.450228);
 	amounts.push_back(0.00020075);
 	timestamps.push_back("2020/03/17 17:01:24");
 	products.push_back("BTC/USDT");
-	orderTypes.push_back(OrderBookType::bid);
+	orderTypes.push_back(OrderTypes::bid);
 
 
 	prices.push_back(5303.450228);
 	amounts.push_back(0.00020075);
 	timestamps.push_back("2020/03/17 17:01:28");
 	products.push_back("BTC/USDT");
-	orderTypes.push_back(OrderBookType::ask);
+	orderTypes.push_back(OrderTypes::ask);
 
 	std::cout << "Price 1: " << prices[0] << std::endl << std::endl;
 	std::cout << "Price 2: " << prices[1] << std::endl << std::endl;
