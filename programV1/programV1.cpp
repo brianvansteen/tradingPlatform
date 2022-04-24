@@ -11,20 +11,33 @@ enum class OrderBookType{bid, ask};
 
 class OrderBookEntry
 {
-    public:
+public:
 
-    // create constructor
-    OrderBookEntry(double price,
-                double amount,
-                std::string timestamp,
-                std::string product,
-                OrderBookType ordertype)
+    // create constructor, preferred method
+
+    OrderBookEntry(double _price,
+        double _amount,
+        std::string _timestamp,
+        std::string _product,
+        OrderBookType _ordertype)
+
+        :price(_price),
+        amount(_amount),
+        timestamp(_timestamp),
+        product(_product),
+        ordertype{_ordertype}
+
+    //OrderBookEntry(double price,
+    //            double amount,
+    //            std::string timestamp,
+    //            std::string product,
+    //            OrderBookType ordertype)
     {
-        this->price = price;
-        this->amount = amount;
-        this->timestamp = timestamp;
-        this->product = product;
-        this->ordertype = ordertype;
+        //this->price = price;
+        //this->amount = amount;
+        //this->timestamp = timestamp;
+        //this->product = product;
+        //this->ordertype = ordertype;
     }
 
         double price;
@@ -140,11 +153,26 @@ int main()
 {
     printHello();
 
-    OrderBookEntry order1{10302,
-                    0.0051824,
-                    "2020/03/17 17:04:02.2234",
-                    "BTC/USDT",
-                    OrderBookType::bid};
+    std::vector<OrderBookEntry> orders;
+
+    //OrderBookEntry order1{10302,
+    //                0.0051824,
+    //                "2020/03/17 17:04:02.2234",
+    //                "BTC/USDT",
+    //                OrderBookType::bid};
+
+    // call the constructor directly, instead of a variable of a constructor
+    orders.push_back(OrderBookEntry{ 10302,
+        0.0051824,
+        "2020/03/17 17:04:02.2234",
+        "BTC/USDT",
+        OrderBookType::bid });
+
+    orders.push_back(OrderBookEntry{ 12302,
+    0.0081824,
+    "2020/03/17 17:08:02.2234",
+    "BTC/USDT",
+    OrderBookType::ask });
 
     //order1.price = 10000;
     //order1.amount = 0.003183;
@@ -152,7 +180,9 @@ int main()
     //order1.product = "BTC/USDT";
     //order1.ordertype = OrderBookType::bid;
 
-    std::cout << "The price is: " << order1.price << std::endl << std::endl;
+    //std::cout << "The price is: " << order1.price << std::endl << std::endl;
+    std::cout << "The price is: " << orders[0].price << std::endl << std::endl;
+    std::cout << "The price is: " << orders[1].price << std::endl << std::endl;
 
     while (true) {
 
