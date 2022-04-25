@@ -9,7 +9,7 @@ void printHello();
 
 enum class OrderBookType{bid, ask};
 
-class OrderBookEntry
+class OrderBookEntry // name of the class
 {
 public:
 
@@ -19,8 +19,9 @@ public:
         double _amount,
         std::string _timestamp,
         std::string _product,
-        OrderBookType _ordertype)
+        OrderBookType _ordertype) // constructor with input values from call
 
+        // implementation of the constructor
         :price(_price),
         amount(_amount),
         timestamp(_timestamp),
