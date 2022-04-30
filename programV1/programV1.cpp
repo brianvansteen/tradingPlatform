@@ -61,6 +61,26 @@ public:
     }
 };
 
+class BigBox
+{
+private:
+    double length{ 1.0 };
+    double width{ 1.0 };
+    double height{ 1.0 };
+public:
+    BigBox(double lengthValue, double widthValue, double heightValue)
+    {
+        std::cout << "BigBox constructor has been called!!" << std::endl << std::endl;
+        length = lengthValue;
+        width = widthValue;
+        height = heightValue;
+    }
+    double boxVolume()
+    {
+        return length * width * height;
+    }
+};
+
 
 /* print the user menu */
 void printMenu()
@@ -236,6 +256,10 @@ int main()
 
     Box myBox;
     std::cout << "The volumne of my box is: " << myBox.boxVolume() << std::endl << std::endl;
+    
+    BigBox myOtherBox{ 3.0, 4.0, 5.0 };
+    double myOtherBoxVolume{ myOtherBox.boxVolume() };
+    std::cout << "The volumne of my other box is: " << myOtherBoxVolume << std::endl << std::endl;
 
     while (true) {
 
