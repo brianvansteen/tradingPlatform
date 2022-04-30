@@ -185,6 +185,32 @@ int main()
     std::cout << "The price is: " << orders[0].price << std::endl << std::endl;
     std::cout << "The price is: " << orders[1].price << std::endl << std::endl;
 
+    for (OrderBookEntry& order : orders) // call by reference
+    {
+    std::cout << "The first price is: " << order.price << std::endl << std::endl;
+    }
+
+    for (unsigned int i = 0; i < orders.size(); ++i)
+    {
+        std::cout << "The second price is: " << orders[i].price << std::endl << std::endl;
+    }
+
+    for (unsigned int i = 0; i < orders.size(); ++i)
+    {
+        std::cout << "The third price is: " << orders.at(i).price << std::endl << std::endl;
+    }
+
+    enum class Day{Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday};
+    Day today{ Day::Saturday };
+    std::cout << "Today is: " << static_cast<int>(today)<<std::endl<<std::endl;
+
+    std::vector<long> various_numbers(3, 10L);
+    std::cout <<"FIRST: "<< various_numbers[0] << std::endl;
+    various_numbers.push_back(7);
+    for (long i : various_numbers)
+        std::cout << i << ' ' << std::endl;
+
+
     while (true) {
 
         printMenu();
