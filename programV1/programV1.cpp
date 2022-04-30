@@ -48,6 +48,20 @@ public:
         OrderBookType ordertype;
 };
 
+class Box
+{
+private:
+    double length{ 33.0 };
+    double width{ 15.0 };
+    double height{ 3 };
+public:
+    double boxVolume()
+    {
+        return length * width * height;
+    }
+};
+
+
 /* print the user menu */
 void printMenu()
 {
@@ -219,6 +233,9 @@ int main()
         ++count;
     };
     std::cout << "Temperature sum: " << sum << " Temperature count: " << count << std::endl<<std::endl;
+
+    Box myBox;
+    std::cout << "The volumne of my box is: " << myBox.boxVolume() << std::endl << std::endl;
 
     while (true) {
 
