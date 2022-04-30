@@ -210,6 +210,15 @@ int main()
     for (long i : various_numbers)
         std::cout << i << ' ' << std::endl;
 
+    double sum{};
+    unsigned count{};
+    double temperatures[]{ 45,5, 5.1, 48.2, 100.9, 63.8, 22.0 };
+    for (auto t : temperatures)
+    {
+        sum += t;
+        ++count;
+    };
+    std::cout << "Temperature sum: " << sum << " Temperature count: " << count << std::endl<<std::endl;
 
     while (true) {
 
